@@ -8,7 +8,7 @@ class AlarmTest extends Specification{
         given:
         Sensor stubSensor = Stub(Sensor)
         def alarm = new Alarm(stubSensor)
-        stubSensor.popNextPressurePsiValue() >> Alarm.LowPressureThreshold +1
+        stubSensor.popNextPressurePsiValue() >> Alarm.LOW_PRESSURE_THRESHOLD +1
         when:
         alarm.check()
         then:
@@ -19,7 +19,7 @@ class AlarmTest extends Specification{
         given:
         Sensor stubSensor = Stub(Sensor)
         def alarm = new Alarm(stubSensor)
-        stubSensor.popNextPressurePsiValue() >> Alarm.HighPressureThreshold+1
+        stubSensor.popNextPressurePsiValue() >> Alarm.HIGH_PRESSURE_THRESHOLD+1
         when:
         alarm.check()
         then:
@@ -32,7 +32,7 @@ class AlarmTest extends Specification{
         def alarm = new Alarm(stubSensor)
 
         when:
-        stubSensor.popNextPressurePsiValue() >>> [Alarm.HighPressureThreshold+1, Alarm.LowPressureThreshold+1]
+        stubSensor.popNextPressurePsiValue() >>> [Alarm.HIGH_PRESSURE_THRESHOLD+1, Alarm.LOW_PRESSURE_THRESHOLD+1]
         alarm.check()
 
         and:
