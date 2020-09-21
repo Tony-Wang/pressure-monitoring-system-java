@@ -41,6 +41,4 @@ class AlarmTest extends Specification{
         then:
         !alarm.isAlarmOn()
     }
-    // TODO-new-feature: a normal pressure value after a value outside then range should stop the alarm
-
 }

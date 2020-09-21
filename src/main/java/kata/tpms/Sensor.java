@@ -2,9 +2,10 @@ package kata.tpms;
 
 import java.util.Random;
 
-public class Sensor {
+public class Sensor extends Transducer{
     public static final double OFFSET = 16;
 
+    @Override
     public double popNextPressurePsiValue()
     {
         double pressureTelemetryValue;
